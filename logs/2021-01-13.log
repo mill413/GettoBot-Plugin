@@ -242,3 +242,9 @@
 [0m2021-01-13 11:17:29 V/Net 845689905: Send: ConfigPushSvc.PushResp[0m
 [0m2021-01-13 11:17:29 V/Net 845689905: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success[0m
 [0m2021-01-13 11:17:29 V/Net 845689905: Send: ConfigPushSvc.PushResp[0m
+[92m2021-01-13 22:54:59 I/Net 1234567: Connected to server msfwifi.3g.qq.com:8080[0m
+[0m2021-01-13 22:54:59 V/Net 1234567: Send: wtlogin.login[0m
+[0m2021-01-13 22:54:59 V/Net 1234567: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 22:54:59 I/Net 1234567: Connected to server msfwifi.3g.qq.com:8080[0m
+[0m2021-01-13 22:55:00 V/Net 1234567: Send: wtlogin.login[0m
+[0m2021-01-13 22:55:00 V/Net 1234567: Recv: LoginPacketResponse.Captcha.Slider[0m

@@ -10,8 +10,8 @@ import java.net.URL
 import java.util.zip.GZIPInputStream
 
 object Getto {
-    val id:Long = 845689905
-    val pwd:String = "hawkin"
+    val id:Long = 1234567
+    val pwd:String = "pwd"
     val authorId:Long = 501848752
     val wifeID:Long = 1234567
 

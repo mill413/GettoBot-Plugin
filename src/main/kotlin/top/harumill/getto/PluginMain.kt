@@ -28,7 +28,7 @@ object PluginMain : KotlinPlugin(
             EmptyCoroutineContext,
             Listener.ConcurrencyKind.CONCURRENT
         ) {
-            Getto.parseCmd(message,group)
+            group.sendMessage("hello")
         }
         /**
          * 好友消息

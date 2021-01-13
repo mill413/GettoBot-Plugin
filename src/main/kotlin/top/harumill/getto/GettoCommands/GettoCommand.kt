@@ -1,5 +1,6 @@
 package top.harumill.getto.GettoCommands
 
+import net.mamoe.mirai.contact.Contact
 import top.harumill.getto.UserLevel
 
 /**
@@ -13,11 +14,16 @@ import top.harumill.getto.UserLevel
  *         # - Normal（所有人）
  *         指令级别向下兼容
  */
-abstract class GettoCommand {
-    val name:String = ""
-    val args:List<String> = mutableListOf()
-    val level: UserLevel = UserLevel.Normal
+abstract class GettoCommand (_args:List<String>,_level:UserLevel){
 
-    abstract fun parseCmd(msg: String)
-    abstract fun execute()
+    var name:String = ""
+    var args:List<String> = mutableListOf()
+    var level: UserLevel = UserLevel.Normal
+
+    init {
+        name = _args[0]
+        args = _args.subList(1,_args.lastIndex)
+        level = _level
+    }
+    abstract fun execute(receiver:Contact,sender:Contact)
 }

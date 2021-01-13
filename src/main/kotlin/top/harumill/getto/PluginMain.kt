@@ -28,8 +28,7 @@ object PluginMain : KotlinPlugin(
             EmptyCoroutineContext,
             Listener.ConcurrencyKind.CONCURRENT
         ) {
-            val msg = message.contentToString()
-            Getto.parseCmd(msg)
+            Getto.parseCmd(message,group)
         }
         /**
          * 好友消息
@@ -39,7 +38,7 @@ object PluginMain : KotlinPlugin(
             EmptyCoroutineContext,
             Listener.ConcurrencyKind.CONCURRENT
         ) {
-
+            
         }
         /**
          * 加群邀请

@@ -1,0 +1,244 @@
+[92m2021-01-13 10:52:27 I/Net 845689905: Connected to server 42.81.172.81:80[0m
+[0m2021-01-13 10:52:27 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 10:52:28 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 10:52:28 I/Net 845689905: Connected to server 42.81.172.81:80[0m
+[0m2021-01-13 10:52:28 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 10:52:28 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 10:55:18 I/Net 845689905: Connected to server msfwifi.3g.qq.com:8080[0m
+[0m2021-01-13 10:55:18 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 10:55:18 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 10:55:18 I/Net 845689905: Connected to server msfwifi.3g.qq.com:8080[0m
+[0m2021-01-13 10:55:18 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 10:55:18 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 10:56:25 I/Net 845689905: Connected to server 42.81.172.22:80[0m
+[0m2021-01-13 10:56:25 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 10:56:25 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 10:56:25 I/Net 845689905: Connected to server 42.81.172.22:80[0m
+[0m2021-01-13 10:56:25 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 10:56:25 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 10:56:52 I/Net 845689905: Connected to server 42.81.169.46:8080[0m
+[0m2021-01-13 10:56:52 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 10:56:53 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 10:56:53 I/Net 845689905: Connected to server 42.81.169.46:8080[0m
+[0m2021-01-13 10:56:53 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 10:56:53 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 10:57:08 I/Net 845689905: Connected to server 114.221.144.215:80[0m
+[0m2021-01-13 10:57:08 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 10:57:08 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 10:57:08 I/Net 845689905: Connected to server 114.221.144.215:80[0m
+[0m2021-01-13 10:57:08 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 10:57:08 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 10:57:23 I/Net 845689905: Connected to server 42.81.169.46:8080[0m
+[0m2021-01-13 10:57:23 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 10:57:23 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 10:57:24 I/Net 845689905: Connected to server 42.81.169.46:8080[0m
+[0m2021-01-13 10:57:24 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 10:57:24 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 11:07:20 I/Net 845689905: Connected to server 42.81.172.147:443[0m
+[0m2021-01-13 11:07:20 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:07:21 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 11:07:21 I/Net 845689905: Connected to server 42.81.172.147:443[0m
+[0m2021-01-13 11:07:21 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:07:21 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 11:11:30 I/Net 845689905: Connected to server 114.221.144.215:80[0m
+[0m2021-01-13 11:11:30 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:11:30 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 11:11:30 I/Net 845689905: Connected to server 114.221.144.215:80[0m
+[0m2021-01-13 11:11:30 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:11:30 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Picture[0m
+[0m2021-01-13 11:11:37 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:11:37 V/Net 845689905: Recv: Error(title=禁止登录, message=当前上网环境异常，请更换网络环境或在常用设备上登录或稍后再试。, errorInfo=)[0m
+[92m2021-01-13 11:12:28 I/Net 845689905: Connected to server 42.81.172.147:443[0m
+[0m2021-01-13 11:12:28 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:12:28 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 11:12:28 I/Net 845689905: Connected to server 42.81.172.147:443[0m
+[0m2021-01-13 11:12:28 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:12:28 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 11:12:43 I/Net 845689905: Connected to server 42.81.169.46:8080[0m
+[0m2021-01-13 11:12:43 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:12:44 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 11:12:44 I/Net 845689905: Connected to server 42.81.169.46:8080[0m
+[0m2021-01-13 11:12:44 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:12:44 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Picture[0m
+[0m2021-01-13 11:12:48 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:12:48 V/Net 845689905: Recv: Error(title=禁止登录, message=当前上网环境异常，请更换网络环境或在常用设备上登录或稍后再试。, errorInfo=)[0m
+[92m2021-01-13 11:14:29 I/Net 845689905: Connected to server 42.81.172.81:80[0m
+[0m2021-01-13 11:14:29 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:14:29 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 11:14:30 I/Net 845689905: Connected to server 42.81.172.81:80[0m
+[0m2021-01-13 11:14:30 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:14:30 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Picture[0m
+[0m2021-01-13 11:14:35 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:14:35 V/Net 845689905: Recv: Error(title=禁止登录, message=当前上网环境异常，请更换网络环境或在常用设备上登录或稍后再试。, errorInfo=)[0m
+[92m2021-01-13 11:15:25 I/Net 845689905: Connected to server 114.221.144.215:80[0m
+[0m2021-01-13 11:15:25 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:15:26 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 11:15:26 I/Net 845689905: Connected to server 114.221.144.215:80[0m
+[0m2021-01-13 11:15:26 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:15:26 V/Net 845689905: Recv: LoginPacketResponse.Captcha.Slider[0m
+[92m2021-01-13 11:17:00 I/Net 845689905: Connected to server 42.81.172.81:80[0m
+[0m2021-01-13 11:17:00 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:17:00 V/Net 845689905: Recv: LoginPacketResponse.Success[0m
+[92m2021-01-13 11:17:00 I/Net 845689905: Login successful[0m
+[0m2021-01-13 11:17:00 V/Net 845689905: Send: StatSvc.register[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Recv: Response(StatSvc.register)[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Send: StatSvc.GetDevLoginInfo[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Recv: StatSvc.GetDevLoginInfo.Response(deviceList.size=2)[0m
+[92m2021-01-13 11:17:01 I/Net 845689905: Start loading friend list...[0m
+[92m2021-01-13 11:17:01 I/Net 845689905: Start loading group list...[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Send: friendlist.getFriendGroupList[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Send: friendlist.GetTroopListReqV2[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Recv: FriendList.GetFriendGroupList.Response[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Loading friend list: 80/80[0m
+[92m2021-01-13 11:17:01 I/Net 845689905: Successfully loaded friend list: 80 in total[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Recv: FriendList.GetFriendGroupList.Response[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[0m2021-01-13 11:17:01 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[92m2021-01-13 11:17:02 I/Net 845689905: Successfully loaded group list: 6 in total.[0m
+[92m2021-01-13 11:17:02 I/Net 845689905: Awaiting ConfigPushSvc.PushReq.[0m
+[92m2021-01-13 11:17:02 I/Net 845689905: Syncing friend message history...[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Send: MessageSvc.PbGetMsg[0m
+[92m2021-01-13 11:17:02 I/Net 845689905: Syncing friend message history: Success.[0m
+[92m2021-01-13 11:17:02 I/Net 845689905: Connected to server 42.81.172.81:80[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Recv: LoginPacketResponse.Success[0m
+[92m2021-01-13 11:17:02 I/Net 845689905: Login successful[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Send: StatSvc.register[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Recv: Response(StatSvc.register)[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Send: StatSvc.GetDevLoginInfo[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Recv: StatSvc.GetDevLoginInfo.Response(deviceList.size=2)[0m
+[92m2021-01-13 11:17:02 I/Net 845689905: Start loading group list...[0m
+[92m2021-01-13 11:17:02 I/Net 845689905: Start loading friend list...[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Send: friendlist.GetTroopListReqV2[0m
+[0m2021-01-13 11:17:02 V/Net 845689905: Send: friendlist.getFriendGroupList[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Recv: FriendList.GetFriendGroupList.Response[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Recv: FriendList.GetFriendGroupList.Response[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Loading friend list: 80/80[0m
+[92m2021-01-13 11:17:03 I/Net 845689905: Successfully loaded friend list: 80 in total[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Send: friendlist.GetTroopMemberListReq[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Recv: FriendList.GetTroopMemberList.Response[0m
+[92m2021-01-13 11:17:03 I/Net 845689905: Successfully loaded group list: 6 in total.[0m
+[92m2021-01-13 11:17:03 I/Net 845689905: Syncing friend message history...[0m
+[92m2021-01-13 11:17:03 I/Net 845689905: Awaiting ConfigPushSvc.PushReq.[0m
+[0m2021-01-13 11:17:03 V/Net 845689905: Send: MessageSvc.PbGetMsg[0m
+[92m2021-01-13 11:17:03 I/Net 845689905: Syncing friend message history: Success.[0m
+[0m2021-01-13 11:17:05 V/Net 845689905: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success[0m
+[0m2021-01-13 11:17:05 V/Net 845689905: Send: ConfigPushSvc.PushResp[0m
+[92m2021-01-13 11:17:05 I/Net 845689905: ConfigPushSvc.PushReq: Success.[0m
+[92m2021-01-13 11:17:05 I/Net 845689905: ConfigPushSvc.PushReq: Success.[0m
+[96m2021-01-13 11:17:05 D/Net 845689905: Received unknown commandName: ConfigPushSvc.PushDomain[0m
+[0m2021-01-13 11:17:05 V/Net 845689905: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success[0m
+[0m2021-01-13 11:17:05 V/Net 845689905: Send: ConfigPushSvc.PushResp[0m
+[92m2021-01-13 11:17:08 I/Net 845689905: Connected to server 42.81.172.147:443[0m
+[0m2021-01-13 11:17:08 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:17:08 V/Net 845689905: Recv: LoginPacketResponse.Success[0m
+[92m2021-01-13 11:17:08 I/Net 845689905: Login successful[0m
+[0m2021-01-13 11:17:08 V/Net 845689905: Send: StatSvc.register[0m
+[0m2021-01-13 11:17:08 V/Net 845689905: Recv: Response(StatSvc.register)[0m
+[0m2021-01-13 11:17:08 V/Net 845689905: Send: StatSvc.GetDevLoginInfo[0m
+[0m2021-01-13 11:17:08 V/Net 845689905: Recv: StatSvc.GetDevLoginInfo.Response(deviceList.size=2)[0m
+[92m2021-01-13 11:17:08 I/Net 845689905: Syncing friend message history...[0m
+[0m2021-01-13 11:17:08 V/Net 845689905: Send: MessageSvc.PbGetMsg[0m
+[92m2021-01-13 11:17:08 I/Net 845689905: Syncing friend message history: Success.[0m
+[0m2021-01-13 11:17:11 V/Net 845689905: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success[0m
+[0m2021-01-13 11:17:11 V/Net 845689905: Send: ConfigPushSvc.PushResp[0m
+[96m2021-01-13 11:17:11 D/Net 845689905: Received unknown commandName: ConfigPushSvc.PushDomain[0m
+[0m2021-01-13 11:17:11 V/Net 845689905: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success[0m
+[0m2021-01-13 11:17:11 V/Net 845689905: Send: ConfigPushSvc.PushResp[0m
+[92m2021-01-13 11:17:14 I/Net 845689905: Connected to server 42.81.172.147:443[0m
+[0m2021-01-13 11:17:14 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:17:14 V/Net 845689905: Recv: LoginPacketResponse.Success[0m
+[92m2021-01-13 11:17:14 I/Net 845689905: Login successful[0m
+[0m2021-01-13 11:17:14 V/Net 845689905: Send: StatSvc.register[0m
+[0m2021-01-13 11:17:14 V/Net 845689905: Recv: Response(StatSvc.register)[0m
+[0m2021-01-13 11:17:14 V/Net 845689905: Send: StatSvc.GetDevLoginInfo[0m
+[0m2021-01-13 11:17:14 V/Net 845689905: Recv: StatSvc.GetDevLoginInfo.Response(deviceList.size=2)[0m
+[92m2021-01-13 11:17:14 I/Net 845689905: Syncing friend message history...[0m
+[0m2021-01-13 11:17:14 V/Net 845689905: Send: MessageSvc.PbGetMsg[0m
+[92m2021-01-13 11:17:14 I/Net 845689905: Syncing friend message history: Success.[0m
+[0m2021-01-13 11:17:17 V/Net 845689905: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success[0m
+[0m2021-01-13 11:17:17 V/Net 845689905: Send: ConfigPushSvc.PushResp[0m
+[96m2021-01-13 11:17:17 D/Net 845689905: Received unknown commandName: ConfigPushSvc.PushDomain[0m
+[0m2021-01-13 11:17:17 V/Net 845689905: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success[0m
+[0m2021-01-13 11:17:17 V/Net 845689905: Send: ConfigPushSvc.PushResp[0m
+[92m2021-01-13 11:17:20 I/Net 845689905: Connected to server 42.81.172.22:80[0m
+[0m2021-01-13 11:17:20 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:17:20 V/Net 845689905: Recv: LoginPacketResponse.Success[0m
+[92m2021-01-13 11:17:20 I/Net 845689905: Login successful[0m
+[0m2021-01-13 11:17:20 V/Net 845689905: Send: StatSvc.register[0m
+[0m2021-01-13 11:17:20 V/Net 845689905: Recv: Response(StatSvc.register)[0m
+[0m2021-01-13 11:17:20 V/Net 845689905: Send: StatSvc.GetDevLoginInfo[0m
+[0m2021-01-13 11:17:20 V/Net 845689905: Recv: StatSvc.GetDevLoginInfo.Response(deviceList.size=2)[0m
+[92m2021-01-13 11:17:20 I/Net 845689905: Syncing friend message history...[0m
+[0m2021-01-13 11:17:20 V/Net 845689905: Send: MessageSvc.PbGetMsg[0m
+[92m2021-01-13 11:17:20 I/Net 845689905: Syncing friend message history: Success.[0m
+[0m2021-01-13 11:17:22 V/Net 845689905: Send: MessageSvc.PbSendMsg[0m
+[0m2021-01-13 11:17:22 V/Net 845689905: Recv: MessageSvcPbSendMsg.Response.SUCCESS[0m
+[0m2021-01-13 11:17:22 V/Net 845689905: Send: MessageSvc.PbSendMsg[0m
+[0m2021-01-13 11:17:23 V/Net 845689905: Recv: MessageSvcPbSendMsg.Response.SUCCESS[0m
+[0m2021-01-13 11:17:23 V/Net 845689905: Send: MessageSvc.PbSendMsg[0m
+[0m2021-01-13 11:17:23 V/Net 845689905: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success[0m
+[0m2021-01-13 11:17:23 V/Net 845689905: Send: ConfigPushSvc.PushResp[0m
+[96m2021-01-13 11:17:23 D/Net 845689905: Received unknown commandName: ConfigPushSvc.PushDomain[0m
+[0m2021-01-13 11:17:23 V/Net 845689905: Recv: MessageSvcPbSendMsg.Response.SUCCESS[0m
+[0m2021-01-13 11:17:23 V/Net 845689905: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success[0m
+[0m2021-01-13 11:17:23 V/Net 845689905: Send: ConfigPushSvc.PushResp[0m
+[0m2021-01-13 11:17:23 V/Net 845689905: Send: MessageSvc.PbSendMsg[0m
+[0m2021-01-13 11:17:24 V/Net 845689905: Recv: MessageSvcPbSendMsg.Response.SUCCESS[0m
+[0m2021-01-13 11:17:24 V/Net 845689905: Send: MessageSvc.PbSendMsg[0m
+[0m2021-01-13 11:17:24 V/Net 845689905: Recv: MessageSvcPbSendMsg.Response.SUCCESS[0m
+[0m2021-01-13 11:17:24 V/Net 845689905: Send: MessageSvc.PbSendMsg[0m
+[0m2021-01-13 11:17:24 V/Net 845689905: Recv: MessageSvcPbSendMsg.Response.SUCCESS[0m
+[0m2021-01-13 11:17:25 V/Net 845689905: Send: MessageSvc.PbSendMsg[0m
+[0m2021-01-13 11:17:25 V/Net 845689905: Recv: MessageSvcPbSendMsg.Response.SUCCESS[0m
+[0m2021-01-13 11:17:25 V/Net 845689905: Send: MessageSvc.PbSendMsg[0m
+[0m2021-01-13 11:17:25 V/Net 845689905: Recv: MessageSvcPbSendMsg.Response.SUCCESS[0m
+[92m2021-01-13 11:17:26 I/Net 845689905: Connected to server 42.81.172.22:80[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Send: wtlogin.login[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Send: MessageSvc.PbSendMsg[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Recv: MessageSvcPbSendMsg.Response.SUCCESS[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Recv: LoginPacketResponse.Success[0m
+[92m2021-01-13 11:17:26 I/Net 845689905: Login successful[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Send: StatSvc.register[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Send: OnlinePush.RespPush[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Recv: Response(StatSvc.register)[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Send: StatSvc.GetDevLoginInfo[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Send: StatSvc.RspMSFForceOffline[0m
+[92m2021-01-13 11:17:26 I/Net 845689905: Syncing friend message history...[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Send: MessageSvc.PbGetMsg[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Recv: StatSvc.GetDevLoginInfo.Response(deviceList.size=2)[0m
+[92m2021-01-13 11:17:26 I/Net 845689905: Syncing friend message history...[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Send: MessageSvc.PbSendMsg[0m
+[0m2021-01-13 11:17:26 V/Net 845689905: Send: MessageSvc.PbGetMsg[0m
+[92m2021-01-13 11:17:26 I/Net 845689905: Syncing friend message history: Success.[0m
+[92m2021-01-13 11:17:26 I/Net 845689905: Syncing friend message history: Success.[0m
+[0m2021-01-13 11:17:27 V/Net 845689905: Recv: MessageSvcPbSendMsg.Response.SUCCESS[0m
+[96m2021-01-13 11:17:29 D/Net 845689905: Received unknown commandName: ConfigPushSvc.PushDomain[0m
+[0m2021-01-13 11:17:29 V/Net 845689905: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success[0m
+[0m2021-01-13 11:17:29 V/Net 845689905: Send: ConfigPushSvc.PushResp[0m
+[0m2021-01-13 11:17:29 V/Net 845689905: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success[0m
+[0m2021-01-13 11:17:29 V/Net 845689905: Send: ConfigPushSvc.PushResp[0m

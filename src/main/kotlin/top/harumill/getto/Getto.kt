@@ -1,15 +1,18 @@
-package top.harumill.getto.bot
+package top.harumill.getto
 
 import net.mamoe.mirai.contact.Contact
 import net.mamoe.mirai.event.events.MessageEvent
 import net.mamoe.mirai.message.data.MessageChain
-import top.harumill.getto.GettoCommands.PCRCmd
-import top.harumill.getto.UserLevel
+import top.harumill.getto.gettoCommands.PCRCmd
 import java.io.File
 import java.net.URL
 import java.util.zip.GZIPInputStream
 
 object Getto {
+    val id:Long = 1234567
+    val pwd:String = "passwd"
+    val authorId:Long = 501848752
+    val wifeID:Long = 2653780535
 
     val imgDir = "data/img/"
     /**
@@ -34,22 +37,21 @@ object Getto {
     suspend fun parseCmd(message:MessageChain, receiver:Contact,event:MessageEvent) {
         val cmdLevel: UserLevel
         val cmdArgs:List<String>
-        val cmdName:String
 
-        val msg = message.contentToString()
+        var msg = message.contentToString()
         //解析指令前缀
         when(msg[0]){
             '/' -> {
                 cmdLevel = UserLevel.Owner
-                msg.removePrefix("/")
+                msg = msg.removePrefix("/")
             }
             '~' -> {
                 cmdLevel = UserLevel.Operator
-                msg.removePrefix("~")
+                msg = msg.removePrefix("~")
             }
             '#' -> {
                 cmdLevel = UserLevel.Normal
-                msg.removePrefix("#")
+                msg = msg.removePrefix("#")
             }
             else -> {
                 cmdLevel = UserLevel.Normal
@@ -61,8 +63,7 @@ object Getto {
             receiver.sendMessage("输入#help来获取bot可用指令哦")
             return
         }
-        cmdName = cmdArgs[0]
-        when(cmdName){
+        when(cmdArgs[0]){
             "pcr" -> PCRCmd(cmdArgs,cmdLevel).execute(receiver,event.sender)
 
 

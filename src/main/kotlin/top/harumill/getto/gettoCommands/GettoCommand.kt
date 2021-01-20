@@ -1,4 +1,4 @@
-package top.harumill.getto.GettoCommands
+package top.harumill.getto.gettoCommands
 
 import net.mamoe.mirai.contact.Contact
 import top.harumill.getto.UserLevel
@@ -25,5 +25,5 @@ abstract class GettoCommand (_args:List<String>,_level:UserLevel){
         args = _args.subList(1,_args.lastIndex)
         level = _level
     }
-    abstract fun execute(receiver:Contact,sender:Contact)
+    abstract suspend fun execute(receiver:Contact, sender:Contact)
 }

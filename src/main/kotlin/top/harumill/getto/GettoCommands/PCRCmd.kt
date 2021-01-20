@@ -1,8 +1,7 @@
 package top.harumill.getto.GettoCommands
 
 import net.mamoe.mirai.contact.Contact
-import top.harumill.getto.Getto
-import top.harumill.getto.GettoCommands.GettoCommand
+import top.harumill.getto.bot.Getto
 import top.harumill.getto.UserLevel
 import java.io.File
 

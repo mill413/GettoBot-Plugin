@@ -6,8 +6,8 @@ import java.security.cert.CertPath
 import java.util.zip.GZIPInputStream
 
 object Getto {
-    const val id:Long = 845689905
-    const val pwd:String = "hawkin"
+    const val id:Long = 1234567
+    const val pwd:String = "passwd"
     val authorId:Long = 501848752
     val wifeID:Long = 2653780535
 

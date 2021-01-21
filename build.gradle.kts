@@ -20,7 +20,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    testCompile("junit", "junit", "4.12")
+    testImplementation("junit", "junit", "4.12")
     api("net.mamoe", "mirai-core", "2.0.0")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.21")
 }

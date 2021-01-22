@@ -8,6 +8,8 @@
 ### （1）以下均默认您已安装并成功配置MiraiConsoleLoader（以下略称mcl），若您还不知道如何使用mcl，请参照[官方文档](https://github.com/mamoe/mirai-console/blob/master/docs/Run.md)
 ### （2）直接使用
 若您需要直接使用，请在[release](https://github.com/Mill413/GettoBot/releases) 页面下载最新版本的jar包，并放入mcl的plugins目录中
+bot的所有指令及功能如下![帮助文档](doc/help.png)
+
 ### （3）修改源码
 若您需要自行修改代码，以使用自己的bot，请参照[2.维护](#2.维护)对源代码进行适当修改
 ## 2.维护

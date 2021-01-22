@@ -2,3 +2,4 @@
 /config/Console/
 /data/img/
 /logs/
+/src/main/kotlin/top/harumill/getto/bot/GettoInfo.kt

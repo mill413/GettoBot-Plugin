@@ -151,7 +151,7 @@ object PluginMain : KotlinPlugin(
                         bot.getFriendOrFail(GettoInfo.authorId).sendMessage("${sender.nick}(${sender.id})从群${group.name}(${group.id})发了条消息:\n${msg.removePrefix("留言")}")
                     }
                     msg.startsWith("re") -> {
-                        group.sendMessage(msg.removePrefix("re"))
+                        group.sendMessage(msg.removePrefix("re").trim())
                     }
                     msg.startsWith("来一份禁言") -> {
                         val botLv =group.botPermission.level

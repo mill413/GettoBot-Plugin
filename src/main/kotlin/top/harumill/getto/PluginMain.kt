@@ -199,13 +199,21 @@ object PluginMain : KotlinPlugin(
          * 好友消息
          */
         globalEventChannel().subscribeAlways<FriendMessageEvent> {
-            friend.sendMessage("hi")
+            sender.sendMessage(
+                PlainText("这里是bot目前的指令和功能")+sender.uploadImage(File("${imgDir}help.png"))+
+                PlainText("欢迎打赏作者")+sender.uploadImage(File("${imgDir}money.jpg"))+
+                PlainText("bot暂时没有私聊功能")
+            )
         }
         /**
          * 临时消息
          */
         globalEventChannel().subscribeAlways<GroupTempMessageEvent> {
-            sender.sendMessage("hi")
+            sender.sendMessage(
+                PlainText("这里是bot目前的指令和功能")+sender.uploadImage(File("${imgDir}help.png"))+
+                PlainText("欢迎打赏作者")+sender.uploadImage(File("${imgDir}money.jpg"))+
+                PlainText("bot暂时没有私聊功能")
+            )
         }
         /**
          * 加群邀请

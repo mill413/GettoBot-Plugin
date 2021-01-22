@@ -25,6 +25,9 @@ object Getto {
         return file
     }
 
+    /**
+     *  获取对应img目录下所有图片
+     */
     fun getImgList(path: String): MutableList<String> {
         val files:MutableList<String> = mutableListOf()
         val fileTree:FileTreeWalk = File(path).walk()

@@ -142,6 +142,9 @@ object PluginMain : KotlinPlugin(
                             group.sendMessage(At(sender)+group.uploadImage(File(atDir+ files.random())))
                         }
                     }
+                    "@${bot.id}爬","@${bot.id} 爬" -> {
+                        group.sendMessage(At(sender)+group.uploadImage(File("${imgDir}pa.jpg")))
+                    }
                 }
                 when{
                     msg.startsWith("留言") -> {
@@ -165,6 +168,7 @@ object PluginMain : KotlinPlugin(
                             when{
                                 botLv > sendLv -> {
                                     sender.mute(time)
+                                    group.sendImage(File("${imgDir}mute.jpg"))
                                 }
                                 sendLv == 2 -> {
                                     group.sendMessage("我不能禁言群主哦，建议群主退下群")

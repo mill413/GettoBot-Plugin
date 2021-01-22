@@ -2,16 +2,14 @@ package top.harumill.getto
 
 import java.io.File
 import java.net.URL
-import java.security.cert.CertPath
 import java.util.zip.GZIPInputStream
 
 object Getto {
     const val id:Long = 1234567
     const val pwd:String = "passwd"
-    val authorId:Long = 501848752
-    val wifeID:Long = 2653780535
+    const val authorId:Long = 501848752
+    const val wifeID:Long = 2653780535
 
-    val imgDir = "data/img/"
     /**
      * 下载文件
      */
@@ -33,8 +31,8 @@ object Getto {
 
     fun getImgList(path: String): MutableList<String> {
         val files:MutableList<String> = mutableListOf()
-        val filetree:FileTreeWalk = File(path).walk()
-        filetree.maxDepth(1)
+        val fileTree:FileTreeWalk = File(path).walk()
+        fileTree.maxDepth(1)
             .filter { it.isFile }
             .forEach { files.add(it.name) }
         return files

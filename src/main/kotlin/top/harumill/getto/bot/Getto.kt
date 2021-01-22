@@ -1,14 +1,10 @@
-package top.harumill.getto
+package top.harumill.getto.bot
 
 import java.io.File
 import java.net.URL
 import java.util.zip.GZIPInputStream
 
 object Getto {
-    const val id:Long = 1234567
-    const val pwd:String = "passwd"
-    const val authorId:Long = 501848752
-    const val wifeID:Long = 2653780535
 
     /**
      * 下载文件

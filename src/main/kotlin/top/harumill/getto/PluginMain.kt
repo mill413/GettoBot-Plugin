@@ -11,6 +11,8 @@ import net.mamoe.mirai.message.data.At
 import net.mamoe.mirai.message.data.Image
 import net.mamoe.mirai.message.data.PlainText
 import net.mamoe.mirai.utils.info
+import top.harumill.getto.bot.Getto
+import top.harumill.getto.bot.GettoInfo
 import java.io.File
 import java.time.LocalTime
 
@@ -132,7 +134,7 @@ object PluginMain : KotlinPlugin(
                         }
                     }
                     "@${bot.id}","@${bot.id} "-> {
-                        if(sender.id == Getto.wifeID){
+                        if(sender.id == GettoInfo.wifeID){
                             group.sendMessage(At(sender)+group.uploadImage(File("${imgDir}wife.jpg")))
                         }
                         else{
@@ -143,7 +145,7 @@ object PluginMain : KotlinPlugin(
                 }
                 when{
                     msg.startsWith("留言") -> {
-                        bot.getFriendOrFail(Getto.authorId).sendMessage("${sender.nick}(${sender.id})从群${group.name}(${group.id})发了条消息:\n${msg.removePrefix("留言")}")
+                        bot.getFriendOrFail(GettoInfo.authorId).sendMessage("${sender.nick}(${sender.id})从群${group.name}(${group.id})发了条消息:\n${msg.removePrefix("留言")}")
                     }
                     msg.startsWith("re") -> {
                         group.sendMessage(msg.removePrefix("re"))

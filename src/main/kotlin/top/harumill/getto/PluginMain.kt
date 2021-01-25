@@ -7,15 +7,17 @@ import net.mamoe.mirai.contact.Contact.Companion.uploadImage
 import net.mamoe.mirai.contact.getMemberOrFail
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.globalEventChannel
-import net.mamoe.mirai.message.data.At
-import net.mamoe.mirai.message.data.Face
-import net.mamoe.mirai.message.data.Image
-import net.mamoe.mirai.message.data.PlainText
+import net.mamoe.mirai.message.data.*
+import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
+import net.mamoe.mirai.utils.ExternalResource.Companion.uploadAsVoice
 import net.mamoe.mirai.utils.MiraiInternalApi
 import net.mamoe.mirai.utils.info
 import top.harumill.getto.bot.Getto
 import top.harumill.getto.bot.GettoInfo
+import top.harumill.getto.bot.MessagesPool
 import java.io.File
+import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.LocalTime
 
 object PluginMain : KotlinPlugin(
@@ -24,6 +26,7 @@ object PluginMain : KotlinPlugin(
         version = "0.1.1"
     )
 ) {
+    const val voiceDir = "data/voice/"
     const val imgDir = "data/img/"
     const val pcrDir = "${imgDir}/pcr/"
     val setuDir = "${imgDir}setu/no/"
@@ -31,6 +34,7 @@ object PluginMain : KotlinPlugin(
     val stampDir = "${pcrDir}stamp/"
     val catsDir = "${imgDir}cats/"
     val atDir = "${imgDir}atbot/"
+    val sdDir = "${imgDir}sbdog/"
     var files:MutableList<String> = mutableListOf()
 
     override fun onEnable() {
@@ -45,6 +49,10 @@ object PluginMain : KotlinPlugin(
             var repeatOrNot:Boolean = true
             var isSrc:Boolean = false
             message.forEach {
+                if(it is FlashImage){
+                    val dtm = LocalDateTime.now()
+                    bot.getFriendOrFail(GettoInfo.authorId).sendMessage(PlainText("${dtm.toLocalDate()} ${dtm.hour}:${dtm.minute}:${dtm.second}\n${sender.nick}(${sender.id})在群${group.name}(${group.id})发送了一张闪照")+it.image)
+                }
                 if(isSrc == false){
                     isSrc = true
                 }
@@ -141,6 +149,11 @@ object PluginMain : KotlinPlugin(
                         else{
                             group.sendImage(File(catsDir+cat))
                         }
+                    }
+                    "随机傻狗" -> {
+                        files = Getto.getImgList(sdDir)
+                        val dog = files.random()
+                        group.sendImage(File(sdDir+dog))
                     }
                     "@${bot.id}","@${bot.id} "-> {
                         if(sender.id == GettoInfo.wifeID){

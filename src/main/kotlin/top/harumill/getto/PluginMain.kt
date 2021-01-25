@@ -10,6 +10,7 @@ import net.mamoe.mirai.event.globalEventChannel
 import net.mamoe.mirai.message.data.At
 import net.mamoe.mirai.message.data.Image
 import net.mamoe.mirai.message.data.PlainText
+import net.mamoe.mirai.utils.MiraiInternalApi
 import net.mamoe.mirai.utils.info
 import top.harumill.getto.bot.Getto
 import top.harumill.getto.bot.GettoInfo
@@ -41,7 +42,16 @@ object PluginMain : KotlinPlugin(
              * 仅复读图片和文字
              */
             var repeatOrNot:Boolean = true
-            message.forEach { if (it !is PlainText || it !is Image) repeatOrNot = false }
+            var isSrc:Boolean = false
+            message.forEach {
+                if(isSrc == false){
+                    isSrc = true
+                }
+                else if (it !is Image && it !is PlainText){
+                    repeatOrNot = false
+                }
+            }
+            println(repeatOrNot)
             if(repeatOrNot == true){
                 if((0..1000).random() < 7){
                     group.sendMessage(message)
@@ -49,7 +59,6 @@ object PluginMain : KotlinPlugin(
             }
 
             var msg = message.contentToString()
-//            println(msg)
             if(msg.startsWith("#")){
                 msg = msg.removePrefix("#")
                 when(true){
@@ -185,10 +194,10 @@ object PluginMain : KotlinPlugin(
                     }
                     msg.startsWith(".r") -> {
                         val face:Int =
-                            if(msg.removePrefix(".r").isEmpty())
+                            if(msg.removePrefix(".r").trim().isEmpty())
                                 6
                             else
-                                msg.removePrefix(".r").toInt()
+                                msg.removePrefix(".r").trim().toInt()
 
                         group.sendMessage("${sender.nameCard}掷出了${(1..face).random()}")
                     }

@@ -8,6 +8,7 @@ import net.mamoe.mirai.contact.getMemberOrFail
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.globalEventChannel
 import net.mamoe.mirai.message.data.At
+import net.mamoe.mirai.message.data.Face
 import net.mamoe.mirai.message.data.Image
 import net.mamoe.mirai.message.data.PlainText
 import net.mamoe.mirai.utils.MiraiInternalApi
@@ -47,11 +48,10 @@ object PluginMain : KotlinPlugin(
                 if(isSrc == false){
                     isSrc = true
                 }
-                else if (it !is Image && it !is PlainText){
+                else if (it !is Image && it !is PlainText && it !is Face){
                     repeatOrNot = false
                 }
             }
-            println(repeatOrNot)
             if(repeatOrNot == true){
                 if((0..1000).random() < 7){
                     group.sendMessage(message)

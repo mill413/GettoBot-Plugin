@@ -8,6 +8,7 @@ import net.mamoe.mirai.contact.getMemberOrFail
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.globalEventChannel
 import net.mamoe.mirai.message.data.*
+import net.mamoe.mirai.utils.BotConfiguration
 import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
 import net.mamoe.mirai.utils.ExternalResource.Companion.uploadAsVoice
 import net.mamoe.mirai.utils.MiraiInternalApi
@@ -27,8 +28,9 @@ object PluginMain : KotlinPlugin(
     )
 ) {
     const val voiceDir = "data/voice/"
+
     const val imgDir = "data/img/"
-    const val pcrDir = "${imgDir}/pcr/"
+    const val pcrDir = "${imgDir}pcr/"
     val setuDir = "${imgDir}setu/no/"
     val comicDir = "${pcrDir}comic/"
     val stampDir = "${pcrDir}stamp/"
@@ -43,6 +45,7 @@ object PluginMain : KotlinPlugin(
          * 群消息
          */
         globalEventChannel().subscribeAlways<GroupMessageEvent> {
+            MessagesPool.insert(message, LocalDateTime.now())
             /**
              * 仅复读图片和文字
              */
@@ -76,7 +79,7 @@ object PluginMain : KotlinPlugin(
                     msg == "setu" -> {
                         if((0..1000).random() < 14){
                             files = Getto.getImgList(setuDir)
-                            group.sendImage(File(imgDir+files[(0..files.size).random()]))
+                            group.sendImage(File(setuDir+files[(0..files.size).random()]))
                         }
                     }
                     msg.startsWith("pcr") -> {
@@ -262,6 +265,25 @@ object PluginMain : KotlinPlugin(
             if(target == bot){
                 from.nudge().sendTo(subject)
             }
+        }
+        /**
+         * 群撤回消息
+         */
+        globalEventChannel().subscribeAlways<MessageRecallEvent.GroupRecall> {
+            val dtm = LocalDateTime.now()
+            bot.getFriendOrFail(GettoInfo.authorId).sendMessage(PlainText("${dtm.toLocalDate()} ${dtm.hour}:${dtm.minute}:${dtm.second}\n${operator?.nick}(${operator?.id})\n在群${group.name}(${group.id})撤回了一条\n${author.nick}(${authorId})发送的消息"))
+            val msg = MessagesPool.getById(messageIds[0])
+            println("撤回消息ID:${messageIds[0]}")
+            if(msg != null)
+                msg.sendTo(bot.getFriendOrFail(GettoInfo.authorId))
+            else
+                bot.getFriendOrFail(GettoInfo.authorId).sendMessage("该撤回消息已过期")
+        }
+        /**
+         * 被挤下线时自动重连
+         */
+        globalEventChannel().subscribeAlways<BotOfflineEvent.Force> {
+            reconnect = true
         }
     }
 }

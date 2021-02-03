@@ -162,20 +162,6 @@ object PluginMain : KotlinPlugin(
                         }
                         group.sendMessage(At(sender) + meet)
                     }
-                    "随机猫猫" -> {
-                        files = Getto.getImgList(catsDir)
-                        val cat = files.random()
-                        if (cat.startsWith("dog")) {
-                            group.sendMessage(PlainText("恭喜${sender.nameCard}随机出一只狗狗") + group.uploadImage(File(catsDir + cat)))
-                        } else {
-                            group.sendImage(File(catsDir + cat))
-                        }
-                    }
-                    "随机傻狗" -> {
-                        files = Getto.getImgList(sdDir)
-                        val dog = files.random()
-                        group.sendImage(File(sdDir + dog))
-                    }
                     "@${bot.id}", "@${bot.id} " -> {
                         if (sender.id == GettoInfo.wifeID) {
                             group.sendMessage(At(sender) + group.uploadImage(File("${imgDir}wife.jpg")))
@@ -186,18 +172,6 @@ object PluginMain : KotlinPlugin(
                     }
                     "@${bot.id}爬", "@${bot.id} 爬" -> {
                         group.sendMessage(At(sender) + group.uploadImage(File("${imgDir}pa.jpg")))
-                    }
-                    "随机色图" -> {
-                        group.sendMessage("开发中,欢迎投稿色图")
-                    }
-                    "随机pcr卡面", "pcr卡面" -> {
-                        files = Getto.getImgList(cardDir)
-                        group.sendImage(File(cardDir + files.random()))
-                    }
-                    "随机头像" -> {
-                        val ava = Getto.getDownloadFile(group.members.random().avatarUrl, imgDir+"tmp")
-                        group.sendImage(ava)
-                        ava.deleteRecursively()
                     }
                 }
                 when {
@@ -272,8 +246,36 @@ object PluginMain : KotlinPlugin(
                             File("${imgDir}jupai.jpg"))
                         group.sendImage(File("${imgDir}jupai.jpg"))
                     }
-                    msg.startsWith("计算") -> {
-
+                    msg.startsWith("计算") -> {}
+                    msg.startsWith("随机") -> {
+                        when(msg.removePrefix("随机")){
+                            "猫猫" -> {
+                                files = Getto.getImgList(catsDir)
+                                val cat = files.random()
+                                if (cat.startsWith("dog")) {
+                                    group.sendMessage(PlainText("恭喜${sender.nameCard}随机出一只狗狗") + group.uploadImage(File(catsDir + cat)))
+                                } else {
+                                    group.sendImage(File(catsDir + cat))
+                                }
+                            }
+                            "傻狗" -> {
+                                files = Getto.getImgList(sdDir)
+                                val dog = files.random()
+                                group.sendImage(File(sdDir + dog))
+                            }
+                            "色图" -> {
+                                group.sendMessage("开发中,欢迎投稿色图")
+                            }
+                            "pcr卡面" -> {
+                                files = Getto.getImgList(cardDir)
+                                group.sendImage(File(cardDir + files.random()))
+                            }
+                            "头像" -> {
+                                val ava = Getto.getDownloadFile(group.members.random().avatarUrl, imgDir+"tmp")
+                                group.sendImage(ava)
+                                ava.deleteRecursively()
+                            }
+                        }
                     }
                 }
             }

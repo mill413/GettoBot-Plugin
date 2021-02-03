@@ -16,6 +16,8 @@ import top.harumill.getto.bot.ImgInfo
 import top.harumill.getto.botInfo.GettoInfo
 import top.harumill.getto.bot.MessagesPool
 import java.io.File
+import java.net.InetAddress
+import java.time.Duration
 import java.time.LocalDateTime
 import java.time.LocalTime
 
@@ -44,6 +46,7 @@ object PluginMain : KotlinPlugin(
     val bangbgDir = "${imgDir}bang_bg/"
     var files: MutableList<String> = mutableListOf()
 
+    lateinit var startTime:LocalDateTime
     @MiraiExperimentalApi
     override fun onEnable() {
         logger.info { "Plugin loaded" }
@@ -335,6 +338,16 @@ object PluginMain : KotlinPlugin(
                             it.sendMessage(PlainText("来自作者的广播消息:")+content)
                         }
                     }
+                    msg == "status" -> {
+                        var duration = Duration.between(startTime,LocalDateTime.now())
+                        sender.sendMessage("登录IP:${InetAddress.getLocalHost().hostAddress}\n" +
+                            "好友数:${bot.friends.size}\n" +
+                            "已加入群:${bot.groups.size}\n" +
+                            "Java版本:${System.getProperties().getProperty("java.version")}\n" +
+                            "操作系统名称:${System.getProperties().getProperty("os.name")}\n" +
+                            "操作系统版本:${System.getProperties().getProperty("os.version")}\n" +
+                            "已运行时间:${duration.toHoursPart()}天${duration.toHoursPart()}小时${duration.toMinutesPart()}分钟${duration.toSecondsPart()}秒")
+                    }
                 }
             } else {
                 val msg = message.contentToString()
@@ -444,6 +457,12 @@ object PluginMain : KotlinPlugin(
                     }
                 }
             }
+        }
+        /**
+         * 上线
+         */
+        globalEventChannel().subscribeAlways<BotOnlineEvent> {
+            startTime = LocalDateTime.now()
         }
     }
 }

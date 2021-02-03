@@ -1,6 +1,5 @@
 /device.json
-/config/Console/
 /data/img/
 /logs/
 /config/
-/src/test/kotlin/MainTest.kt
+/src/test/

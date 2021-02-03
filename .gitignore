@@ -2,5 +2,6 @@
 /config/Console/
 /data/img/
 /logs/
-/src/main/kotlin/top/harumill/getto/bot/GettoInfo.kt
 /src/main/kotlin/top/harumill/getto/bot/MessagesPool.kt
+/config/
+/src/main/kotlin/top/harumill/getto/botInfo/

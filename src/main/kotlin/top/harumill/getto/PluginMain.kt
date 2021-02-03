@@ -273,8 +273,7 @@ object PluginMain : KotlinPlugin(
                         group.sendImage(File("${imgDir}jupai.jpg"))
                     }
                     msg.startsWith("计算") -> {
-                        msg = msg.removePrefix("计算")
-                        group.sendMessage(At(sender)+PlainText("${Getto.calculate(msg)}"))
+
                     }
                 }
             }

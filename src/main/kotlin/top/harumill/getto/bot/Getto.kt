@@ -98,7 +98,7 @@ object Getto {
         ImageIO.write(img, imgFile.extension, outFile)
     }
 
-    fun calculate(input: String): String {
-        return Calculator.getResult(input)
-    }
+//    fun calculate(input: String): String {
+//
+//    }
 }

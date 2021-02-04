@@ -46,7 +46,8 @@ object PluginMain : KotlinPlugin(
     val bangbgDir = "${imgDir}bang_bg/"
     var files: MutableList<String> = mutableListOf()
 
-    lateinit var startTime:LocalDateTime
+    val startTime:LocalDateTime = LocalDateTime.now()
+
     @MiraiExperimentalApi
     override fun onEnable() {
         logger.info { "Plugin loaded" }
@@ -346,7 +347,8 @@ object PluginMain : KotlinPlugin(
                             "Java版本:${System.getProperties().getProperty("java.version")}\n" +
                             "操作系统名称:${System.getProperties().getProperty("os.name")}\n" +
                             "操作系统版本:${System.getProperties().getProperty("os.version")}\n" +
-                            "已运行时间:${duration.toHoursPart()}天${duration.toHoursPart()}小时${duration.toMinutesPart()}分钟${duration.toSecondsPart()}秒")
+                            "上次登陆时间:${startTime.year}年${startTime.monthValue}月${startTime.dayOfMonth}日${startTime.hour}时${startTime.minute}分${startTime.second}秒\n"+
+                            "已运行时间:${duration.toDaysPart()}天${duration.toHoursPart()}小时${duration.toMinutesPart()}分钟${duration.toSecondsPart()}秒")
                     }
                 }
             } else {
@@ -462,7 +464,7 @@ object PluginMain : KotlinPlugin(
          * 上线
          */
         globalEventChannel().subscribeAlways<BotOnlineEvent> {
-            startTime = LocalDateTime.now()
+//            startTime = LocalDateTime.now()
         }
     }
 }

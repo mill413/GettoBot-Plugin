@@ -1,6 +1,0 @@
-name: "GettoBot"
-author: "Haruto Mimori"
-version: "0.1.1"
-main: "top.harumill.getto.PluginMain"
-info: "晴人自用bot"
-depends: []

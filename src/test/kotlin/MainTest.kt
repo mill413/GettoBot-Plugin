@@ -6,8 +6,6 @@ import net.mamoe.mirai.console.plugin.PluginManager.INSTANCE.enable
 import net.mamoe.mirai.console.plugin.PluginManager.INSTANCE.load
 import net.mamoe.mirai.console.terminal.MiraiConsoleTerminalLoader
 import net.mamoe.mirai.console.util.ConsoleExperimentalApi
-import top.harumill.getto.botInfo.GettoInfo
-import java.io.File
 
 @ConsoleExperimentalApi
 suspend fun main() {

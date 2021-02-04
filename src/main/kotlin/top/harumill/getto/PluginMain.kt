@@ -24,6 +24,7 @@ import java.time.LocalTime
 object PluginMain : KotlinPlugin(
     JvmPluginDescription(
         id = "top.harumill.getto",
+        name = "Getto",
         version = "0.1.1"
     )
 ) {
@@ -281,6 +282,13 @@ object PluginMain : KotlinPlugin(
                             }
                         }
                     }
+                    msg.startsWith("入侵乌拉圭") -> {
+                        msg = msg.removePrefix("入侵乌拉圭").trim()
+                        val msgList = msg.split(' ')
+                        val who = msgList[0]
+                        val count = msgList[1].toDouble()
+                        group.sendMessage("你说得对，但是乌拉圭的人口有345.7万，同时，仅${who}就有${msgList[1]}万。 如果${who}决定入侵乌拉圭，那么每一个乌拉圭人要打${String.format("%.1f",(count/345.7))}只${who}，你不知道，你不在乎，你只关心你自己。")
+                    }
                 }
             }
             
@@ -311,6 +319,7 @@ object PluginMain : KotlinPlugin(
                                 }
                                 Getto.downloadFile(it.queryUrl(), catsDir + "cat (${catNum + 1})")
                                 uped++
+                                catNum++
                             }
                         }
                         sender.sendMessage("已上传${uped}张猫猫，现有猫猫${catNum}张")
@@ -326,6 +335,8 @@ object PluginMain : KotlinPlugin(
                                         dogNum++
                                 }
                                 Getto.downloadFile(it.queryUrl(), catsDir + "dog${dogNum + 1}")
+                                uped++
+                                dogNum++
                             }
                         }
                         sender.sendMessage("已上传${uped}张狗狗，现有狗狗${dogNum}张")

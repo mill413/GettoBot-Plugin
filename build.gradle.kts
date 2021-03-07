@@ -25,4 +25,6 @@ dependencies {
     testImplementation("junit", "junit", "4.12")
     api("net.mamoe", "mirai-core", "2.0.0")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.21")
+    implementation ("org.springframework.boot:spring-boot-starter-jdbc:2.1.5.RELEASE")
+    implementation ("mysql:mysql-connector-java:8.0.16")
 }

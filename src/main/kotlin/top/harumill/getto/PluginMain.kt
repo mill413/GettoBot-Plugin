@@ -139,14 +139,14 @@ object PluginMain : KotlinPlugin(
                             msg.startsWith("bg") -> {
                                 group.sendMessage(At(sender)+PlainText("图片较大，请稍等"))
                                 files = Getto.getImgList(bangbgDir)
-
+                                group.sendMessage(At(sender)+ group.uploadImage(File(bangbgDir + files.random())))
                             }
                         }
                     }
                 }
             } else {
                 when (msg) {
-                    "hi", "早上好", "中午好", "下午好", "晚上好" -> {
+                    "hi", "早","早上好", "中午好", "下午好", "晚上好" -> {
                         val curTime = LocalTime.now().hour
                         val meet = when (curTime) {
                             in 5..10 -> {
@@ -162,7 +162,7 @@ object PluginMain : KotlinPlugin(
                                 "晚上好!"
                             }
                             else -> {
-                                "晚上好!好好睡觉"
+                                "晚安,好好睡觉"
                             }
                         }
                         group.sendMessage(At(sender) + meet)
@@ -177,6 +177,10 @@ object PluginMain : KotlinPlugin(
                     }
                     "@${bot.id}爬", "@${bot.id} 爬" -> {
                         group.sendMessage(At(sender) + group.uploadImage(File("${imgDir}pa.jpg")))
+                    }
+                    "签到" -> {
+                        val signStr = Getto.sign(sender.id)
+                        group.sendMessage(At(sender)+signStr)
                     }
                 }
                 when {
@@ -282,13 +286,6 @@ object PluginMain : KotlinPlugin(
                             }
                         }
                     }
-                    msg.startsWith("入侵乌拉圭") -> {
-                        msg = msg.removePrefix("入侵乌拉圭").trim()
-                        val msgList = msg.split(' ')
-                        val who = msgList[0]
-                        val count = msgList[1].toDouble()
-                        group.sendMessage("你说得对，但是乌拉圭的人口有345.7万，同时，仅${who}就有${msgList[1]}万。 如果${who}决定入侵乌拉圭，那么每一个乌拉圭人要打${String.format("%.1f",(count/345.7))}只${who}，你不知道，你不在乎，你只关心你自己。")
-                    }
                 }
             }
             
@@ -309,17 +306,15 @@ object PluginMain : KotlinPlugin(
                     msg.startsWith("upcat") -> {
                         var uped = 0
                         var catNum = 0
+                        val catList = Getto.getImgList(catsDir)
+                        catList.forEach {
+                            if (it.startsWith("cat"))
+                                catNum++
+                        }
                         message.forEach {
                             if (it is Image) {
-                                val catList = Getto.getImgList(catsDir)
-
-                                catList.forEach {
-                                    if (it.startsWith("cat"))
-                                        catNum++
-                                }
-                                Getto.downloadFile(it.queryUrl(), catsDir + "cat (${catNum + 1})")
+                                Getto.downloadFile(it.queryUrl(), catsDir + "cat (${catNum++})")
                                 uped++
-                                catNum++
                             }
                         }
                         sender.sendMessage("已上传${uped}张猫猫，现有猫猫${catNum}张")
@@ -327,16 +322,15 @@ object PluginMain : KotlinPlugin(
                     msg.startsWith("updog") -> {
                         var uped = 0
                         var dogNum = 0
+                        val catList = Getto.getImgList(catsDir)
+                        catList.forEach {
+                            if (it.startsWith("dog"))
+                                dogNum++
+                        }
                         message.forEach {
                             if (it is Image) {
-                                val catList = Getto.getImgList(catsDir)
-                                catList.forEach {
-                                    if (it.startsWith("dog"))
-                                        dogNum++
-                                }
-                                Getto.downloadFile(it.queryUrl(), catsDir + "dog${dogNum + 1}")
+                                Getto.downloadFile(it.queryUrl(), catsDir + "dog${dogNum++}")
                                 uped++
-                                dogNum++
                             }
                         }
                         sender.sendMessage("已上传${uped}张狗狗，现有狗狗${dogNum}张")

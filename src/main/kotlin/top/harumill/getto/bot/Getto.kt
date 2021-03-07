@@ -1,9 +1,13 @@
 package top.harumill.getto.bot
 
-import java.awt.*
+import top.harumill.getto.GettoDB
+import java.awt.Font
+import java.awt.Graphics2D
+import java.awt.RenderingHints
 import java.awt.image.BufferedImage
 import java.io.File
 import java.net.URL
+import java.time.LocalDate
 import java.util.zip.GZIPInputStream
 import javax.imageio.ImageIO
 
@@ -98,7 +102,28 @@ object Getto {
         ImageIO.write(img, imgFile.extension, outFile)
     }
 
-//    fun calculate(input: String): String {
-//
-//    }
+    fun sign(id: Long): String {
+        val query = "select * from sign where id=${id}"
+        val insert = "insert into sign value(${id},1,'${LocalDate.now()}')"
+        val res = GettoDB.query(query)
+
+        val credit: Long
+
+        while (res.next()) {
+            println("id:${res.getLong("id")}")
+            println("credit:${res.getLong("credit")}")
+            println("lastdate:${res.getDate("lastdate")}")
+            println("------------------------------")
+            credit = res.getLong("credit")
+
+            return if (res.getDate("lastdate").toString() == LocalDate.now().toString()) {
+                "你已经签过到了，你的积分为${credit}"
+            } else {
+                "签到成功，你的积分为${credit + 1}"
+            }
+        }
+
+        GettoDB.insert(insert)
+        return "签到成功，你的积分为1"
+    }
 }

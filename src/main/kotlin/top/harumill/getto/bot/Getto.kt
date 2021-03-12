@@ -104,7 +104,7 @@ object Getto {
 
     fun sign(id: Long): String {
         val query = "select * from sign where id=${id}"
-        val insert = "insert into sign value(${id},1,'${LocalDate.now()}')"
+
         val res = GettoDB.query(query)
 
         val credit: Long
@@ -119,11 +119,16 @@ object Getto {
             return if (res.getDate("lastdate").toString() == LocalDate.now().toString()) {
                 "你已经签过到了，你的积分为${credit}"
             } else {
+                val update = "update sign set credit=${credit + 1},lastdate='${LocalDate.now()}' where id=${id}"
+                GettoDB.update(update)
                 "签到成功，你的积分为${credit + 1}"
             }
         }
+        val insert = "insert into sign (id,credit,lastdate) value(${id},1,'${LocalDate.now()}')"
+        GettoDB.update(insert)
 
-        GettoDB.insert(insert)
+        GettoDB.stat.close()
+
         return "签到成功，你的积分为1"
     }
 }

@@ -277,14 +277,17 @@ object PluginMain : KotlinPlugin(
                             }
                             "pcr卡面" -> {
                                 files = Getto.getImgList(cardDir)
-                                group.sendImage(File(cardDir + files.random()))
+                                group.sendMessage(At(sender)+group.uploadImage(File(cardDir + files.random())))
                             }
                             "头像" -> {
-                                val ava = Getto.getDownloadFile(group.members.random().avatarUrl, imgDir+"tmp")
+                                val ava = Getto.getDownloadFile(bot.groups.random().members.random().avatarUrl, imgDir+"tmp")
                                 group.sendImage(ava)
                                 ava.deleteRecursively()
                             }
                         }
+                    }
+                    msg.contains("granbluefantasy.jp") -> {
+                        group.sendMessage(At(sender)+"骑空士爬")
                     }
                 }
             }

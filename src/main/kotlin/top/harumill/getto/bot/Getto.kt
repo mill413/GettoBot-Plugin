@@ -109,6 +109,17 @@ object Getto {
 
         val credit: Long
 
+        val timeStamp = (System.currentTimeMillis()/1000)
+        val randomCredit: () -> Long = {
+            var sum = 0L
+            timeStamp.toString().forEach {
+                sum += it.toLong()
+            }
+            val randomSt = (0..sum.toString().length-2).random()
+            sum.toString().substring(randomSt..randomSt+1).toLong()
+        }
+        val getCredit = (10..randomCredit()).random()
+//        println(getCredit)
         while (res.next()) {
             println("id:${res.getLong("id")}")
             println("credit:${res.getLong("credit")}")
@@ -117,18 +128,18 @@ object Getto {
             credit = res.getLong("credit")
 
             return if (res.getDate("lastdate").toString() == LocalDate.now().toString()) {
-                "你已经签过到了，你的积分为${credit}"
+                "你今天已经签过到了，你目前的积分为${credit}"
             } else {
-                val update = "update sign set credit=${credit + 1},lastdate='${LocalDate.now()}' where id=${id}"
+                val update = "update sign set credit=${credit + getCredit},lastdate='${LocalDate.now()}' where id=${id}"
                 GettoDB.update(update)
-                "签到成功，你的积分为${credit + 1}"
+                "签到成功，你获得了${getCredit}点积分，你现在的积分为${credit + getCredit}"
             }
         }
-        val insert = "insert into sign (id,credit,lastdate) value(${id},1,'${LocalDate.now()}')"
+        val insert = "insert into sign (id,credit,lastdate) value(${id},${getCredit},'${LocalDate.now()}')"
         GettoDB.update(insert)
 
         GettoDB.stat.close()
 
-        return "签到成功，你的积分为1"
+        return "这是你第一次签到，你获得了${getCredit}点积分"
     }
 }

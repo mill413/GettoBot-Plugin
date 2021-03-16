@@ -6,26 +6,34 @@ import java.sql.ResultSet
 import java.sql.Statement
 
 object GettoDB {
-    val driver = "com.mysql.cj.jdbc.Driver"
-    val url =
-        "jdbc:mysql://localhost:3306/bot?useSSL=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8"
-    val user = "root"
-    val psd = "rootroot"
+    private const val driver = "com.mysql.cj.jdbc.Driver"
+    private const val url =
+        "jdbc:mysql://localhost:3306/bot?useSSL=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&autoReconnect=true"
+    private const val user = "root"
+    private const val psd = "rootroot"
 
-    var conn:Connection
+    private var conn:Connection
     var stat:Statement
-
     init {
         Class.forName(driver)
         conn = DriverManager.getConnection(url, user, psd)
         stat = conn.createStatement()
     }
 
-    fun query(op:String):ResultSet{
+    private fun connect(){
+        conn = DriverManager.getConnection(url, user, psd)
+        stat = conn.createStatement()
+    }
+
+    fun query(op: String): ResultSet {
+//        if (conn.isClosed or stat.isClosed) connect()
+        stat = conn.createStatement()
         return stat.executeQuery(op)
     }
 
-    fun insert(op: String){
+    fun update(op: String){
+//        if (conn.isClosed or stat.isClosed) connect()
+        stat = conn.createStatement()
         stat.executeUpdate(op)
     }
 }

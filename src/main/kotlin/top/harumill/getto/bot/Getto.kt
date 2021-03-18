@@ -1,5 +1,11 @@
 package top.harumill.getto.bot
 
+import io.github.mzdluo123.silk4j.AudioUtils
+import net.mamoe.mirai.message.data.Message
+import net.mamoe.mirai.message.data.MessageChain
+import net.mamoe.mirai.message.data.toPlainText
+import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
+import net.mamoe.mirai.utils.ExternalResource.Companion.uploadAsVoice
 import top.harumill.getto.GettoDB
 import java.awt.Font
 import java.awt.Graphics2D
@@ -110,17 +116,12 @@ object Getto {
         val credit: Long
 
         val timeStamp = (System.currentTimeMillis()/1000)
-        val randomCredit: () -> Long = {
-            var sum = 0L
-            timeStamp.toString().forEach {
-                sum += it.toLong()
-            }
-            val randomSt = (0..sum.toString().length-2).random()
-            sum.toString().substring(randomSt..randomSt+1).toLong()
-        }
-        val getCredit = (10..randomCredit()).random()
+        val randomNo = ((timeStamp.toString().random()).toInt()-'0'.toInt())
+        val getCredit = (10..randomNo+10).random()
+        println("getCredit:${getCredit}")
 //        println(getCredit)
         while (res.next()) {
+            println("------------------------------")
             println("id:${res.getLong("id")}")
             println("credit:${res.getLong("credit")}")
             println("lastdate:${res.getDate("lastdate")}")
@@ -141,5 +142,12 @@ object Getto {
         GettoDB.stat.close()
 
         return "这是你第一次签到，你获得了${getCredit}点积分"
+    }
+
+    fun convert(mp3:File):File{
+        AudioUtils.init(File("data/tmp/"))
+        val silk:File = AudioUtils.mp3ToSilk(mp3)
+        silk.copyTo(File("data/voice/${mp3.name}.silk"))
+        return silk
     }
 }

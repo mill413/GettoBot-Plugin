@@ -4,11 +4,14 @@ import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescription
 import net.mamoe.mirai.console.plugin.jvm.KotlinPlugin
 import net.mamoe.mirai.contact.Contact.Companion.sendImage
 import net.mamoe.mirai.contact.Contact.Companion.uploadImage
+import net.mamoe.mirai.contact.Friend
 import net.mamoe.mirai.contact.getMemberOrFail
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.globalEventChannel
 import net.mamoe.mirai.message.data.*
 import net.mamoe.mirai.message.data.Image.Key.queryUrl
+import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
+import net.mamoe.mirai.utils.ExternalResource.Companion.uploadAsVoice
 import net.mamoe.mirai.utils.MiraiExperimentalApi
 import net.mamoe.mirai.utils.info
 import top.harumill.getto.bot.Getto
@@ -25,7 +28,7 @@ object PluginMain : KotlinPlugin(
     JvmPluginDescription(
         id = "top.harumill.getto",
         name = "Getto",
-        version = "0.1.1"
+        version = "1.0"
     )
 ) {
     const val voiceDir = "data/voice/"
@@ -81,7 +84,7 @@ object PluginMain : KotlinPlugin(
             }
             var msg = message.contentToString()
 //            if(msg == "gacha"){
-//                val gacha = File(voiceDir+"gacha_1.amr").toExternalResource().uploadAsVoice(group)
+//                val gacha = File(voiceDir+"gacha_1.mp3.silk").toExternalResource().uploadAsVoice(group)
 //                group.sendMessage(gacha)
 //            }
             if (msg.startsWith("#")) {
@@ -130,6 +133,20 @@ object PluginMain : KotlinPlugin(
                                 group.sendMessage(At(sender)+PlainText("图片较大，请稍等"))
                                 files = Getto.getImgList(cardDir)
                                 group.sendMessage(At(sender)+ group.uploadImage(File(cardDir + files.random())))
+                            }
+                            msg.startsWith("gacha") -> {
+                                val num = msg.removePrefix("gacha").trim()
+                                when(num){
+                                    "1" -> {
+                                        group.sendMessage(File("${voiceDir}gacha_1.mp3.silk").toExternalResource().uploadAsVoice(group))
+                                    }
+                                    "10" -> {
+                                        group.sendMessage(File("${voiceDir}gacha_10.mp3.silk").toExternalResource().uploadAsVoice(group))
+                                    }
+                                    else -> {
+                                        group.sendMessage("要么单抽要么十连")
+                                    }
+                                }
                             }
                         }
                     }
@@ -301,10 +318,17 @@ object PluginMain : KotlinPlugin(
                 val msg = message.contentToString()
                 when (true) {
                     msg.startsWith("回复") -> {
-                        val list = msg.removePrefix("回复").trim().split(' ')
-                        val receiver = bot.getFriendOrFail(list[0].toLong())
-                        val replyMsg = list[1]
-                        receiver.sendMessage("来自作者的回复:\n" + replyMsg)
+                        var receiver = bot.getFriendOrFail(GettoInfo.authorId)
+
+                        var replyMsg: MutableList<SingleMessage> = mutableListOf<SingleMessage>()
+                        message.forEach {
+                            if (it.contentToString().startsWith("回复")){
+                                receiver = bot.getFriendOrFail(it.content.removePrefix("回复").toLong())
+                            }
+                            else replyMsg.add(it)
+                        }
+
+                        receiver.sendMessage("[Getto 作者回复]\n" + replyMsg)
                     }
                     msg.startsWith("upcat") -> {
                         var uped = 0
@@ -342,9 +366,15 @@ object PluginMain : KotlinPlugin(
                         sender.sendImage(File("${imgDir}help.png"))
                     }
                     msg.startsWith("广播") -> {
-                        val content = msg.removePrefix("广播").trim()
+                        var content: MutableList<SingleMessage> = mutableListOf<SingleMessage>()
+                        message.forEach {
+                            if (it.contentToString().startsWith("广播")){
+                                content.add(it.content.removePrefix("广播").trim().toPlainText())
+                            }
+                            else content.add(it)
+                        }
                         bot.groups.forEach {
-                            it.sendMessage(PlainText("来自作者的广播消息:")+content)
+                            it.sendMessage(PlainText("[Getto 广播消息]\n")+content)
                         }
                     }
                     msg == "status" -> {
@@ -357,6 +387,16 @@ object PluginMain : KotlinPlugin(
                             "操作系统版本:${System.getProperties().getProperty("os.version")}\n" +
                             "上次登陆时间:${startTime.year}年${startTime.monthValue}月${startTime.dayOfMonth}日${startTime.hour}时${startTime.minute}分${startTime.second}秒\n"+
                             "已运行时间:${duration.toDaysPart()}天${duration.toHoursPart()}小时${duration.toMinutesPart()}分钟${duration.toSecondsPart()}秒")
+                    }
+                    msg.startsWith("测试") -> {
+                        var content: MutableList<SingleMessage> = mutableListOf<SingleMessage>()
+                        message.forEach {
+                            if (it is PlainText && it.contentToString().startsWith("测试")){
+                                content.add(it.content.removePrefix("测试").trim().toPlainText())
+                            }
+                            else content.add(it)
+                        }
+                        bot.getFriendOrFail(GettoInfo.authorId).sendMessage(content.toMessageChain())
                     }
                 }
             } else {
@@ -395,7 +435,7 @@ object PluginMain : KotlinPlugin(
         globalEventChannel().subscribeAlways<BotJoinGroupEvent.Invite> {
             bot.getFriendOrFail(GettoInfo.authorId)
                 .sendMessage("接受${invitor.nick}(${invitor.id})邀请已加入群${group.name}(${group.id})")
-             group.sendMessage("bot已加入群聊，请输入#help获取最新指令功能表")
+            group.sendMessage("bot已加入群聊，请输入#help获取最新指令功能表")
         }
         /**
          * 成员退群
@@ -467,12 +507,6 @@ object PluginMain : KotlinPlugin(
                     }
                 }
             }
-        }
-        /**
-         * 上线
-         */
-        globalEventChannel().subscribeAlways<BotOnlineEvent> {
-//            startTime = LocalDateTime.now()
         }
     }
 }

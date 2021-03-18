@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "top.harumill"
-version = "0.1.1"
+version = "1.0"
 
 repositories {
     maven { url =uri("https://mirrors.huaweicloud.com/repository/maven") }

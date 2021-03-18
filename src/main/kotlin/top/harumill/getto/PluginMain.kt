@@ -4,7 +4,6 @@ import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescription
 import net.mamoe.mirai.console.plugin.jvm.KotlinPlugin
 import net.mamoe.mirai.contact.Contact.Companion.sendImage
 import net.mamoe.mirai.contact.Contact.Companion.uploadImage
-import net.mamoe.mirai.contact.Friend
 import net.mamoe.mirai.contact.getMemberOrFail
 import net.mamoe.mirai.event.events.*
 import net.mamoe.mirai.event.globalEventChannel
@@ -15,9 +14,9 @@ import net.mamoe.mirai.utils.ExternalResource.Companion.uploadAsVoice
 import net.mamoe.mirai.utils.MiraiExperimentalApi
 import net.mamoe.mirai.utils.info
 import top.harumill.getto.bot.Getto
-import top.harumill.getto.bot.ImgInfo
-import top.harumill.getto.botInfo.GettoInfo
-import top.harumill.getto.bot.MessagesPool
+import top.harumill.getto.utils.ImgInfo
+import top.harumill.getto.bot.GettoInfo
+import top.harumill.getto.utils.MessagesPool
 import java.io.File
 import java.net.InetAddress
 import java.time.Duration
@@ -256,7 +255,7 @@ object PluginMain : KotlinPlugin(
                     }
                     msg.startsWith("举牌") -> {
                         msg = msg.removePrefix("举牌").trim()
-                        val info:ImgInfo = when(msg.length) {
+                        val info: ImgInfo = when(msg.length) {
                             1 -> ImgInfo(250,60,120)
                             2 -> ImgInfo(200,60,120)
                             3 -> ImgInfo(155,60,110)

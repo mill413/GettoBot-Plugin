@@ -1,12 +1,8 @@
 package top.harumill.getto.bot
 
 import io.github.mzdluo123.silk4j.AudioUtils
-import net.mamoe.mirai.message.data.Message
-import net.mamoe.mirai.message.data.MessageChain
-import net.mamoe.mirai.message.data.toPlainText
-import net.mamoe.mirai.utils.ExternalResource.Companion.toExternalResource
-import net.mamoe.mirai.utils.ExternalResource.Companion.uploadAsVoice
-import top.harumill.getto.GettoDB
+import top.harumill.getto.utils.GettoDB
+import top.harumill.getto.utils.ImgInfo
 import java.awt.Font
 import java.awt.Graphics2D
 import java.awt.RenderingHints
